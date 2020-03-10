@@ -1,4 +1,0 @@
-[submodule "external/gudhi"]
-	path = external/gudhi
-	url = git@github.com:gtauzin/gudhi-devel.git
-	branch = steenroder
