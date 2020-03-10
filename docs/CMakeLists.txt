@@ -5,7 +5,7 @@ if(DOXYGEN_FOUND)
     file(MAKE_DIRECTORY ${BUILD_DOC_DIR})
   endif()
 
-  set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/docs/Doxyfile)
+  set(DOXYGEN_IN ${CMAKE_SOURCE_DIR}/docs/Doxyfile)
   set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
   configure_file(${DOXYGEN_IN} ${DOXYGEN_OUT} @ONLY)
 

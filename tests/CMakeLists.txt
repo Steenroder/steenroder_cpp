@@ -1,4 +1,3 @@
-include(AddGoogleTest)
 add_subdirectory("${PROJECT_SOURCE_DIR}/external/googletest" "external/googletest")
 
 # Keeps cache clean
