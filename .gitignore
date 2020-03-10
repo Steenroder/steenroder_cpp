@@ -935,6 +935,8 @@ CTestTestfile.cmake
 _deps
 
 ##### C++
+=======
+>>>>>>> c4a946b9c51b5e9ea0381282fb9fbab68adb7f01
 # Prerequisites
 *.d
 
@@ -967,6 +969,7 @@ _deps
 *.exe
 *.out
 *.app
+<<<<<<< HEAD
 
 ##### C
 # Prerequisites
