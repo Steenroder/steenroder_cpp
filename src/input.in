@@ -1,0 +1,22 @@
+/*  Author: Guillaume Tauzin
+    License: GPLv3
+*/
+
+#pragma once
+
+#include <string>
+
+#include "steenroder/commons.hpp"
+#include "steenroder/options.hpp"
+
+#define DATATYPE double
+
+namespace stn {
+  using dataType = DATATYPE;
+
+  constexpr ComplexType complexType = ComplexType::Simplicial;
+  constexpr FieldType fieldType = FieldType::Z2;
+
+  constexpr ReductionType reductionType = ReductionType::PHAT;
+
+} // namespace stn

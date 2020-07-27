@@ -8,6 +8,7 @@ set(EXECUTABLE_PATH "${PROJECT_SOURCE_DIR}/bin")
 
 # Header file directories
 include_directories("include")
+include_directories("external/AnyOption")
 
 # Unit tests using Google Test
 option(BUILD_TESTS "Build Unit Tests" ON)
@@ -25,3 +26,6 @@ endif()
 
 # Third-party libraries
 #find_package(OpenMP REQUIRED)
+
+# Build Targets
+add_subdirectory(src)

@@ -5,3 +5,6 @@
 	path = external/gudhi
 	url = git@github.com:gtauzin/gudhi-devel.git
 	branch = steenroder
+[submodule "external/AnyOption"]
+	path = external/AnyOption
+	url = https://github.com/hackorama/AnyOption.git
