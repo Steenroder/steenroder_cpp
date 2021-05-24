@@ -5,7 +5,6 @@
 #include "input.in"
 #include "steenroder/args_parser.hpp"
 #include "steenroder/commons.hpp"
-//#include "steenroder/reader.hpp"
 
 #include <steenroder/sparse_matrix.hpp>
 #include <steenroder/vector_column.hpp>
@@ -14,7 +13,6 @@
 #include <steenroder/bars.hpp>
 #include <steenroder/reduction.hpp>
 #include <steenroder/homology.hpp>
-#include <steenroder/sorted_homology.hpp>
 #include <steenroder/steenrod.hpp>
 #include <steenroder/sorted_matrix.hpp>
 #include <steenroder/sorted_bars.hpp>
@@ -117,7 +115,7 @@ void compute_steenrod_barcodes(const std::string& input_filename,
   SimplexMatrix<VectorColumn> simplex_matrix(boundary_matrix, d, d + k);
   write(simplex_matrix, "simplex", output_filename, use_binary);
 
-  // // Need to delete boundary_matrix
+  // // Need to delete boundary_matrix to release memory
 
   // Relative cohomology
   ViewMatrix<VectorColumn> dual_boundary_matrix;
@@ -129,14 +127,14 @@ void compute_steenrod_barcodes(const std::string& input_filename,
   ViewInfiniteBars<VectorColumn> dual_infinite_bars_matrix(n_cells, n_dimensions);
   ViewFiniteBars<VectorColumn> dual_finite_bars_matrix(dual_boundary_matrix);
 
-  ViewHomology<TwistReduction<VectorColumn>> dual_homology;
+  Homology<TwistReduction<VectorColumn>> dual_homology;
   dual_homology.compute(dual_finite_bars_matrix, dual_infinite_bars_matrix);
 
   write(dual_finite_bars_matrix, "dual_finite", output_filename, use_binary);
   write(dual_infinite_bars_matrix, "dual_infinite", output_filename, use_binary);
 
-  dual_finite_bars_matrix.dualize();
-  dual_infinite_bars_matrix.dualize();
+  //dual_finite_bars_matrix.dualize();
+  //dual_infinite_bars_matrix.dualize();
   write_pairs(dual_finite_bars_matrix, dual_infinite_bars_matrix,
               output_filename, use_binary, "dual");
 
@@ -148,10 +146,10 @@ void compute_steenrod_barcodes(const std::string& input_filename,
   steenrod.compute(dual_finite_bars_matrix, dual_infinite_bars_matrix,
                    steenrod_bars_matrix);
 
-  std::cout << "STEENROD\n";
   write(steenrod_bars_matrix, "steenrod", output_filename, use_binary);
 
   //  steenrod_bars_matrix.dualize();
+  steenrod_bars_matrix.dualize();
   write_pairs(steenrod_bars_matrix, output_filename, use_binary, "steenrod");
 
 }

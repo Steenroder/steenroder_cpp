@@ -268,7 +268,7 @@ namespace stn {
         index_t end = start + Base::get_n_columns_per_dimension(dim);
         for(index_t idx_view = start; idx_view < end; ++idx_view) {
           index_t idx_col = Base::get_view(idx_view);
-          std::cout << idx_view << ", " <<  idx_col << std::endl;
+
           if(get_death(idx_col) == -1) {
             set_birth(idx_col, n_cells - 1 - get_birth(idx_col));
           }

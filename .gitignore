@@ -91,7 +91,6 @@ out/
 
 # Gradle files
 .gradle/
-build/
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -1015,6 +1014,7 @@ _deps
 *.su
 *.idb
 *.pdb
+debug/
 
 # Kernel Module Compile Results
 *.mod*
