@@ -6,8 +6,8 @@ Copyright © 2020–2021 Guillaume Tauzin.
 
 ### Building
 
-Flagser requires a C++14 compiler and cmake. Here is how to obtain, build, and
-run flagser:
+Steenroder requires a C++14 compiler and cmake. Here is how to obtain, build, and
+run steenroder:
 
 ```sh
 git clone git@gitlab.com:gtauzin/steenroder.git
