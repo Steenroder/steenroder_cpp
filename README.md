@@ -10,7 +10,7 @@ Steenroder requires a C++14 compiler and cmake. Here is how to obtain, build, an
 run steenroder:
 
 ```sh
-git clone git@gitlab.com:gtauzin/steenroder.git
+git clone git@github.com:gtauzin/steenroder.git
 cd steenroder
 (mkdir -p build && cd build && cmake .. && make stn_double_2 && ./src/stn_double_2 ../examples/rp2.phat rp2_test)
 ```
